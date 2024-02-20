@@ -1,10 +1,48 @@
 <div>
   <div>
+    <hr>
     <h1>
-      Board #<%= @the_board.id %> details
+      <%= @the_board.name %>
     </h1>
+    <hr>
+    <div>
+      <h2>Add a new post</h2>
+
+    </div>
+      <form action="/boards/<%= @the_board.id %>">
+        <label for="title_input">Title</label>
+        <input id="title_input" type="text" name="query_title">
+        <br>
+        <label for="body_input">Body</label>
+        <textarea name="query_body" id="body_input" rows="3"></textarea>
+        <br>
+        <label for="expires_input">Expires on</label>
+        <input type="date" name="query_date" id="expires_input">
+        <br>
+        <button>
+          Add post
+        </button>
+      </form>
+    <div>
+
+    <hr>
 
     <div>
+      <h2>Active posts</h2>
+      <table border="1">
+        <tr>
+        <th>Title</th>
+        <th>Body</th>
+        <th>Posted on</th>
+        <th>Expires on</th>
+        </tr>
+        
+        <#% @list_of_posts.each do || %>
+      </table>
+
+    </div>
+
+
       <div>
         <a href="/boards">
           Go back
